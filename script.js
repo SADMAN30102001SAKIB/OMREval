@@ -110,7 +110,7 @@ document.getElementById("download").addEventListener("click", function (event) {
       document.getElementById("download").innerText = "Loading" + string;
     }, 1000);
     fetch(
-      "https://3715749f-afc4-4c60-896a-6720d0e0f405-00-zf222lektxcg.kirk.replit.dev/upload",
+      "http://sakib30102001.pythonanywhere.com/upload",
       {
         method: "POST",
         body: formData,
