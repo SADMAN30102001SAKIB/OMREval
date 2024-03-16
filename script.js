@@ -98,7 +98,7 @@ document.getElementById("download").addEventListener("click", function (event) {
     parseInt(formData.get("questionsCount")) >= 1 &&
     parseInt(formData.get("questionsCount")) <= 100 &&
     flag &&
-    document.getElementById("file-name").textContent != "No img chosen"
+    document.getElementById("file-name").textContent != "No imgs chosen"
   ) {
     flag = false;
     var error, marks, idno, setno;
@@ -109,13 +109,10 @@ document.getElementById("download").addEventListener("click", function (event) {
       }
       document.getElementById("download").innerText = "Loading" + string;
     }, 1000);
-    fetch(
-      "https://sakib30102001.pythonanywhere.com/upload",
-      {
-        method: "POST",
-        body: formData,
-      }
-    )
+    fetch("https://sakib30102001.pythonanywhere.com/upload", {
+      method: "POST",
+      body: formData,
+    })
       .then((response) => {
         error = response.headers.get("error");
         marks = response.headers.get("marks");
@@ -218,7 +215,7 @@ document.getElementById("file-upload").addEventListener("change", function () {
   var files = document.getElementById("file-upload").files;
   document.getElementById("file-name").textContent = files.length
     ? files.length + " files chosen"
-    : "No img chosen";
+    : "No imgs chosen";
 });
 
 document
