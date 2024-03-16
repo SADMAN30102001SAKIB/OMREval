@@ -1,0 +1,129 @@
+body {
+  font-family: "Arial", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f5f5f5;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+}
+
+#form1,
+#form2 {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#form2 {
+  max-height: 90vh;
+}
+
+#form2q,
+#form3q,
+#form4q,
+#form5q {
+  max-height: 40vh;
+  border: 3px solid #409cff;
+  border-radius: 1.5%;
+  padding: 0 3px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #409cff #fff;
+}
+
+#form2q::-webkit-scrollbar,
+#form3q::-webkit-scrollbar,
+#form4q::-webkit-scrollbar,
+#form5q::-webkit-scrollbar {
+  width: 1px;
+}
+
+#form2q::-webkit-scrollbar-track,
+#form3q::-webkit-scrollbar-track,
+#form4q::-webkit-scrollbar-track,
+#form5q::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+#form2q::-webkit-scrollbar-thumb,
+#form3q::-webkit-scrollbar-thumb,
+#form4q::-webkit-scrollbar-thumb,
+#form5q::-webkit-scrollbar-thumb {
+  background-color: #409cff;
+  border-radius: 4px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+input[type="text"] {
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#download,
+#next,
+#prev {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  margin: 0 35%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#next {
+  margin: 0 85%;
+}
+#prev {
+  margin: 0%;
+}
+
+#download:hover,
+#next:hover,
+#prev:hover {
+  background-color: #0056b3;
+}
+
+.file-upload-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#custom-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#custom-button:hover {
+  background-color: #0056b3;
+}
+
+#file-name {
+  color: #555;
+}

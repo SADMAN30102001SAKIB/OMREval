@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OMREval</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <form id="form">
+      <div id="form1">
+        <label>
+          Marks Per Question:
+          <input type="text" name="mpq" value="1" />
+        </label>
+        <br />
+        <label>
+          Negative Marking:
+          <input
+            type="radio"
+            name="isNegative"
+            value="true"
+            checked
+            id="negativeBox1"
+          />Yes
+          <input
+            type="radio"
+            name="isNegative"
+            value="false"
+            id="negativeBox2"
+          />No
+        </label>
+        <label id="negativeMark">
+          Negative Mark Per Mistake:
+          <input type="text" name="negativeMark" value="0.25" />
+        </label>
+        <br />
+        <label>
+          Number of Sets:
+          <input
+            type="radio"
+            name="setCount"
+            value="1"
+            checked
+          />None&nbsp;&nbsp;|&nbsp;<input
+            type="radio"
+            name="setCount"
+            value="2"
+          />2&nbsp;&nbsp;|&nbsp;<input
+            type="radio"
+            name="setCount"
+            value="3"
+          />3&nbsp;&nbsp;|&nbsp;<input
+            type="radio"
+            name="setCount"
+            value="4"
+          />4
+        </label>
+        <br />
+        <label>
+          ID Box:
+          <input
+            type="radio"
+            name="isRoll"
+            value="true"
+            checked
+            id="rollBox1"
+          />Yes
+          <input type="radio" name="isRoll" value="false" id="rollBox2" />No
+        </label>
+        <label id="rollDigit">
+          ID Digit (1 - 11):
+          <input type="text" name="rollDigit" value="11" />
+        </label>
+        <br />
+        <label>
+          Number of Questions (1 - 100):
+          <input type="text" name="questionsCount" value="100" />
+        </label>
+        <br />
+        <label>
+          <div class="file-upload-wrapper">
+            <input
+              type="file"
+              name="file"
+              id="file-upload"
+              required
+              multiple
+              style="display: none"
+            />
+            <button type="button" id="custom-button">Attach Your Image</button>
+            <span id="file-name">No img chosen</span>
+          </div>
+        </label>
+        <br />
+        <button type="button" id="next">Next</button>
+      </div>
+      <div id="form2">
+        <button type="button" id="prev">Prev</button>
+        <br />
+        <br />
+        <label>
+          W/Q Case:
+          <br />
+          1: If filled, get (0)mark. If left blank, get (0)mark
+          <br />
+          2: If filled, get (+)mark. If left blank, get (+)mark
+          <br />
+          3: If filled, get (0)mark. If left blank, get (+)mark
+          <div id="displayWq">
+            4: If filled, get (-)mark. If left blank, get (0)mark
+            <br />
+            5: If filled, get (-)mark. If left blank, get (+)mark
+          </div>
+          <br id="spanDisplay" />
+          <br />
+          Case :
+          <input
+            type="radio"
+            name="setWq"
+            id="setWq"
+            value="-1"
+            checked
+          />1&nbsp;&nbsp;|<input
+            type="radio"
+            name="setWq"
+            value="-2"
+          />2&nbsp;&nbsp;|<input type="radio" name="setWq" value="-3" />3
+          <span id="displayWqRb"
+            >&nbsp;&nbsp;|<input type="radio" name="setWq" value="-4" />4
+            &nbsp;&nbsp;|<input type="radio" name="setWq" value="-5" />5</span
+          >
+        </label>
+        <br />
+        <label id="setNo">
+          Set:&nbsp;&nbsp;&nbsp;&nbsp;
+          <input
+            type="radio"
+            name="setNo"
+            value="1"
+            id="set1"
+            checked
+          />A&nbsp;&nbsp;|<input
+            type="radio"
+            name="setNo"
+            value="2"
+          />B&nbsp;&nbsp;
+          <span id="set3">
+            |<input type="radio" name="setNo" value="3" /> C&nbsp;&nbsp;</span
+          >
+          <span id="set4">
+            |<input type="radio" name="setNo" value="4" />D
+          </span>
+        </label>
+        <br />
+        <div id="form2q"></div>
+        <div id="form3q"></div>
+        <div id="form4q"></div>
+        <div id="form5q"></div>
+        <br />
+        <button type="button" id="download">Evaluate</button>
+      </div>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>
