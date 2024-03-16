@@ -92,13 +92,13 @@ document.getElementById("download").addEventListener("click", function (event) {
     ((parseInt(formData.get("questionsCount")) <= 35 &&
       document.getElementById("file-upload").files.length == 1) ||
       (parseInt(formData.get("questionsCount")) > 35 &&
-        document.getElementById("file-upload").files.length == 2)) &&
+        document.getElementById("file-upload").files.length == 1 &&
+        document.getElementById("file-upload2").files.length == 1)) &&
     parseInt(formData.get("rollDigit")) >= 1 &&
     parseInt(formData.get("rollDigit")) <= 11 &&
     parseInt(formData.get("questionsCount")) >= 1 &&
     parseInt(formData.get("questionsCount")) <= 100 &&
-    flag &&
-    document.getElementById("file-name").textContent != "No imgs chosen"
+    flag
   ) {
     flag = false;
     var error, marks, idno, setno;
@@ -109,10 +109,13 @@ document.getElementById("download").addEventListener("click", function (event) {
       }
       document.getElementById("download").innerText = "Loading" + string;
     }, 1000);
-    fetch("https://sakib30102001.pythonanywhere.com/upload", {
-      method: "POST",
-      body: formData,
-    })
+    fetch(
+      "https://3715749f-afc4-4c60-896a-6720d0e0f405-00-zf222lektxcg.kirk.replit.dev/upload",
+      {
+        method: "POST",
+        body: formData,
+      }
+    )
       .then((response) => {
         error = response.headers.get("error");
         marks = response.headers.get("marks");
@@ -162,6 +165,7 @@ document.getElementById("download").addEventListener("click", function (event) {
       });
   } else if (flag) {
     alert("Please enter inputs carefully");
+    document.getElementById("download").innerText = "Evaluate";
   }
 });
 
@@ -214,8 +218,21 @@ document.getElementById("custom-button").addEventListener("click", function () {
 document.getElementById("file-upload").addEventListener("change", function () {
   var files = document.getElementById("file-upload").files;
   document.getElementById("file-name").textContent = files.length
-    ? files.length + " files chosen"
-    : "No imgs chosen";
+    ? files[0].name
+    : "No img chosen";
+});
+
+document
+  .getElementById("custom-button2")
+  .addEventListener("click", function () {
+    document.getElementById("file-upload2").click();
+  });
+
+document.getElementById("file-upload2").addEventListener("change", function () {
+  var files = document.getElementById("file-upload2").files;
+  document.getElementById("file-name2").textContent = files.length
+    ? files[0].name
+    : "No img chosen";
 });
 
 document
@@ -224,6 +241,11 @@ document
     addQuestions(document.querySelector('input[name="questionsCount"]').value);
     document.getElementById("setWq").checked = true;
     updateWqValues("-1");
+    if (document.querySelector('input[name="questionsCount"]').value > 35) {
+      document.getElementById("2ndFile").style.display = "block";
+    } else {
+      document.getElementById("2ndFile").style.display = "none";
+    }
   });
 
 document.getElementById("next").addEventListener("click", function () {
