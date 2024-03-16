@@ -72,7 +72,7 @@ input[type="radio"] {
 input[type="text"] {
   padding: 8px;
   margin-top: 5px;
-  border: 1px solid #ccc;
+  border: 2.5px solid #ccc;
   border-radius: 4px;
   width: 100%;
   box-sizing: border-box;
@@ -110,7 +110,8 @@ input[type="text"] {
   gap: 10px;
 }
 
-#custom-button {
+#custom-button,
+#custom-button2 {
   padding: 10px 20px;
   background-color: #007bff;
   color: white;
@@ -120,10 +121,12 @@ input[type="text"] {
   transition: background-color 0.3s ease;
 }
 
-#custom-button:hover {
+#custom-button:hover,
+#custom-button2:hover {
   background-color: #0056b3;
 }
 
-#file-name {
+#file-name,
+#file-name2 {
   color: #555;
 }
