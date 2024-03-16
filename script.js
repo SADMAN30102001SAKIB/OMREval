@@ -110,7 +110,7 @@ document.getElementById("download").addEventListener("click", function (event) {
       document.getElementById("download").innerText = "Loading" + string;
     }, 1000);
     fetch(
-      "http://sakib30102001.pythonanywhere.com/upload",
+      "https://sakib30102001.pythonanywhere.com/upload",
       {
         method: "POST",
         body: formData,
